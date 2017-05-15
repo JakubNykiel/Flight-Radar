@@ -1,0 +1,410 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		232F403F4BB44E909B171040 /* Pods_FlightRadar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66F2E8467B374408624BBFD1 /* Pods_FlightRadar.framework */; };
+		C3D729311ECA6CD800D6B929 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D729301ECA6CD800D6B929 /* AppDelegate.swift */; };
+		C3D729361ECA6CD800D6B929 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3D729341ECA6CD800D6B929 /* Main.storyboard */; };
+		C3D729381ECA6CD800D6B929 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3D729371ECA6CD800D6B929 /* Assets.xcassets */; };
+		C3D7293B1ECA6CD800D6B929 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3D729391ECA6CD800D6B929 /* LaunchScreen.storyboard */; };
+		C3D729461ECA6FFE00D6B929 /* ApiKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = C3D729451ECA6FFE00D6B929 /* ApiKeys.plist */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		66F2E8467B374408624BBFD1 /* Pods_FlightRadar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlightRadar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A36DA6C2BFCD5D62BCBAD2CD /* Pods-FlightRadar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlightRadar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlightRadar/Pods-FlightRadar.debug.xcconfig"; sourceTree = "<group>"; };
+		C3D7292D1ECA6CD800D6B929 /* FlightRadar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlightRadar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3D729301ECA6CD800D6B929 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C3D729351ECA6CD800D6B929 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C3D729371ECA6CD800D6B929 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C3D7293A1ECA6CD800D6B929 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C3D7293C1ECA6CD800D6B929 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C3D729451ECA6FFE00D6B929 /* ApiKeys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ApiKeys.plist; sourceTree = "<group>"; };
+		DA59E8FDA939F07A050D5F1E /* Pods-FlightRadar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlightRadar.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlightRadar/Pods-FlightRadar.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C3D7292A1ECA6CD800D6B929 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				232F403F4BB44E909B171040 /* Pods_FlightRadar.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		481ABBC47FF9096607D5D27A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				66F2E8467B374408624BBFD1 /* Pods_FlightRadar.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B1C9D0D8DBF490443E01C033 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A36DA6C2BFCD5D62BCBAD2CD /* Pods-FlightRadar.debug.xcconfig */,
+				DA59E8FDA939F07A050D5F1E /* Pods-FlightRadar.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C3D729241ECA6CD800D6B929 = {
+			isa = PBXGroup;
+			children = (
+				C3D7292F1ECA6CD800D6B929 /* FlightRadar */,
+				C3D7292E1ECA6CD800D6B929 /* Products */,
+				B1C9D0D8DBF490443E01C033 /* Pods */,
+				481ABBC47FF9096607D5D27A /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		C3D7292E1ECA6CD800D6B929 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C3D7292D1ECA6CD800D6B929 /* FlightRadar.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C3D7292F1ECA6CD800D6B929 /* FlightRadar */ = {
+			isa = PBXGroup;
+			children = (
+				C3D729431ECA6D1F00D6B929 /* Controllers */,
+				C3D729421ECA6D1B00D6B929 /* Models */,
+				C3D729441ECA6D2B00D6B929 /* Views */,
+				C3D729301ECA6CD800D6B929 /* AppDelegate.swift */,
+				C3D729341ECA6CD800D6B929 /* Main.storyboard */,
+				C3D729371ECA6CD800D6B929 /* Assets.xcassets */,
+				C3D729391ECA6CD800D6B929 /* LaunchScreen.storyboard */,
+				C3D7293C1ECA6CD800D6B929 /* Info.plist */,
+				C3D729451ECA6FFE00D6B929 /* ApiKeys.plist */,
+			);
+			path = FlightRadar;
+			sourceTree = "<group>";
+		};
+		C3D729421ECA6D1B00D6B929 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C3D729431ECA6D1F00D6B929 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C3D729441ECA6D2B00D6B929 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C3D7292C1ECA6CD800D6B929 /* FlightRadar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C3D7293F1ECA6CD800D6B929 /* Build configuration list for PBXNativeTarget "FlightRadar" */;
+			buildPhases = (
+				919C1EDBD61F55BF3EA66145 /* [CP] Check Pods Manifest.lock */,
+				C3D729291ECA6CD800D6B929 /* Sources */,
+				C3D7292A1ECA6CD800D6B929 /* Frameworks */,
+				C3D7292B1ECA6CD800D6B929 /* Resources */,
+				24158D9826865A7FFB8C0F56 /* [CP] Embed Pods Frameworks */,
+				97EE35C9BFA6367183AA4494 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FlightRadar;
+			productName = FlightRadar;
+			productReference = C3D7292D1ECA6CD800D6B929 /* FlightRadar.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C3D729251ECA6CD800D6B929 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Jakub Nykiel";
+				TargetAttributes = {
+					C3D7292C1ECA6CD800D6B929 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = 6454359TU3;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = C3D729281ECA6CD800D6B929 /* Build configuration list for PBXProject "FlightRadar" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C3D729241ECA6CD800D6B929;
+			productRefGroup = C3D7292E1ECA6CD800D6B929 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C3D7292C1ECA6CD800D6B929 /* FlightRadar */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C3D7292B1ECA6CD800D6B929 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3D7293B1ECA6CD800D6B929 /* LaunchScreen.storyboard in Resources */,
+				C3D729461ECA6FFE00D6B929 /* ApiKeys.plist in Resources */,
+				C3D729381ECA6CD800D6B929 /* Assets.xcassets in Resources */,
+				C3D729361ECA6CD800D6B929 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		24158D9826865A7FFB8C0F56 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FlightRadar/Pods-FlightRadar-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		919C1EDBD61F55BF3EA66145 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		97EE35C9BFA6367183AA4494 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FlightRadar/Pods-FlightRadar-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C3D729291ECA6CD800D6B929 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3D729311ECA6CD800D6B929 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C3D729341ECA6CD800D6B929 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C3D729351ECA6CD800D6B929 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C3D729391ECA6CD800D6B929 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C3D7293A1ECA6CD800D6B929 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C3D7293D1ECA6CD800D6B929 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C3D7293E1ECA6CD800D6B929 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C3D729401ECA6CD800D6B929 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A36DA6C2BFCD5D62BCBAD2CD /* Pods-FlightRadar.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 6454359TU3;
+				INFOPLIST_FILE = FlightRadar/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = nykiel.FlightRadar;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		C3D729411ECA6CD800D6B929 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DA59E8FDA939F07A050D5F1E /* Pods-FlightRadar.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 6454359TU3;
+				INFOPLIST_FILE = FlightRadar/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = nykiel.FlightRadar;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C3D729281ECA6CD800D6B929 /* Build configuration list for PBXProject "FlightRadar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C3D7293D1ECA6CD800D6B929 /* Debug */,
+				C3D7293E1ECA6CD800D6B929 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C3D7293F1ECA6CD800D6B929 /* Build configuration list for PBXNativeTarget "FlightRadar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C3D729401ECA6CD800D6B929 /* Debug */,
+				C3D729411ECA6CD800D6B929 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C3D729251ECA6CD800D6B929 /* Project object */;
+}

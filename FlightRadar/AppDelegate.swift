@@ -7,16 +7,25 @@
 //
 
 import UIKit
+import GoogleMaps
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let googleMapsKey = valueForAPIKey(keyname: "GoogleMaps")
+        GMSServices.provideAPIKey(googleMapsKey)
         return true
+    }
+    
+    func valueForAPIKey(keyname:String) -> String {
+        let filePath = Bundle.main.path(forResource: "ApiKeys", ofType: "plist")
+        let plist = NSDictionary(contentsOfFile:filePath!)
+        let value = plist?.object(forKey: keyname) as! String
+        return value
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

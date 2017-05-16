@@ -18,8 +18,14 @@ class FlightsMap: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        locationManager.delegate = self
+        mapView.delegate = self
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,6 +41,7 @@ extension FlightsMap:CLLocationManagerDelegate {
             locationManager.startUpdatingLocation()
             mapView.isMyLocationEnabled = true
             mapView.settings.myLocationButton = true
+            
         }
 
     }
@@ -42,8 +49,26 @@ extension FlightsMap:CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.first {
             mapView.camera = GMSCameraPosition(target: location.coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
+            
             locationManager.stopUpdatingLocation()
         }
         
+    }
+}
+extension FlightsMap: GMSMapViewDelegate {
+    
+    func mapView(_ mapView: GMSMapView, idleAt position: GMSCameraPosition) {
+        let _ = getBoundsFromMap(map: mapView)
+    }
+    
+    func getBoundsFromMap(map: GMSMapView) -> [String:CLLocationCoordinate2D]{
+        var boundPoints: [String:CLLocationCoordinate2D] = [:]
+        let visibleRegion: GMSVisibleRegion = map.projection.visibleRegion()
+        let bounds: GMSCoordinateBounds = GMSCoordinateBounds.init(region: visibleRegion)
+        
+        boundPoints["northEast"] = bounds.northEast
+        boundPoints["southWest"] = bounds.southWest
+        print("NE:  lat:\(bounds.northEast.latitude) lon:\(bounds.northEast.longitude)")
+        return boundPoints
     }
 }

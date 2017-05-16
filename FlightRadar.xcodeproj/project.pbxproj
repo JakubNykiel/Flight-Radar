@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		232F403F4BB44E909B171040 /* Pods_FlightRadar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66F2E8467B374408624BBFD1 /* Pods_FlightRadar.framework */; };
 		C36EA4001ECA768500F8369C /* FlightsMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36EA3FF1ECA768500F8369C /* FlightsMap.swift */; };
+		C36EA4041ECA835800F8369C /* Flight.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36EA4031ECA835800F8369C /* Flight.swift */; };
 		C3D729311ECA6CD800D6B929 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D729301ECA6CD800D6B929 /* AppDelegate.swift */; };
 		C3D729361ECA6CD800D6B929 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3D729341ECA6CD800D6B929 /* Main.storyboard */; };
 		C3D729381ECA6CD800D6B929 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3D729371ECA6CD800D6B929 /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 		66F2E8467B374408624BBFD1 /* Pods_FlightRadar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlightRadar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A36DA6C2BFCD5D62BCBAD2CD /* Pods-FlightRadar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlightRadar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlightRadar/Pods-FlightRadar.debug.xcconfig"; sourceTree = "<group>"; };
 		C36EA3FF1ECA768500F8369C /* FlightsMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightsMap.swift; sourceTree = "<group>"; };
+		C36EA4031ECA835800F8369C /* Flight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flight.swift; sourceTree = "<group>"; };
 		C3D7292D1ECA6CD800D6B929 /* FlightRadar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlightRadar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3D729301ECA6CD800D6B929 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C3D729351ECA6CD800D6B929 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 		C3D729421ECA6D1B00D6B929 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C36EA4031ECA835800F8369C /* Flight.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -240,6 +243,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C36EA4041ECA835800F8369C /* Flight.swift in Sources */,
 				C36EA4001ECA768500F8369C /* FlightsMap.swift in Sources */,
 				C3D729311ECA6CD800D6B929 /* AppDelegate.swift in Sources */,
 			);

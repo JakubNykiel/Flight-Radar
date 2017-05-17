@@ -11,19 +11,26 @@ import GoogleMaps
 import Alamofire
 import SwiftyJSON
 
-enum FlightApi:String
+enum FlightFields:String
 {
-    case allFlightsForCoordinate
+    case Latitude = "Lat"
+    case Longitude = "Long"
+    case Model = "Mdl"
+    case Call = "Call"
 }
 
 class Flight {
     
-    let lat: String?
-    let lng: String?
+    let lat: Double
+    let lng: Double
+    let model: String
+    let call: String
     
     init(json: JSON) {
-        self.lat = ""
-        self.lng = ""
+        self.lat = json[FlightFields.Latitude.rawValue].doubleValue
+        self.lng = json[FlightFields.Longitude.rawValue].doubleValue
+        self.model = json[FlightFields.Model.rawValue].stringValue
+        self.call = json[FlightFields.Call.rawValue].stringValue
     }
 }
 /*
@@ -45,44 +52,25 @@ extension Flight {
         return path
     }
     
-    class func getFlights(bound: GMSCoordinateBounds, completion: @escaping ([Flight]) -> Void) {
+    class func getFlights(bound: GMSCoordinateBounds, completion: @escaping (_ allFlights:[Flight]) -> Void) {
         Alamofire.request(Flight.getPath(bound: bound))
             .responseJSON { response in
                 switch response.result {
-                case .success(let value):
-                    let json = JSON(value)
-                   print("JSON: \(json)")
+                
                 case .failure(let error):
                     print(error)
+                    completion([Flight]())
+                    
+                case .success(let value):
+                    let json = JSON(value)
+                    var flights: [Flight] = []
+                    for flight in json["acList"].arrayValue
+                    {
+                        flights.append(Flight(json: flight))
+                    }
+                    completion(flights)
                 }
+                
         }
-//        
-//                guard let responseJSON = response.result.value as? JSON,
-//                    let results = responseJSON[0]["results"],
-//                    let firstResult = results.first,
-//                    let info = firstResult["info"] as? [String: Any],
-//                    let imageColors = info["image_colors"] as? [[String: Any]] else {
-//                        print("Invalid color information received from service")
-//                        completion([Flight]())
-//                        return
-//                }
-//                
-//                let photoColors = imageColors.flatMap({ (dict) -> Flight? in
-//                    guard let r = dict["r"] as? String,
-//                        let g = dict["g"] as? String,
-//                        let b = dict["b"] as? String,
-//                        let closestPaletteColor = dict["closest_palette_color"] as? String else {
-//                            return nil
-//                    }
-//                    
-//                    return PhotoColor(red: Int(r),
-//                                      green: Int(g),
-//                                      blue: Int(b),
-//                                      colorName: closestPaletteColor)
-//                })
-//                
-//                // 5.
-//                completion(photoColors)
-//        }
     }
 }

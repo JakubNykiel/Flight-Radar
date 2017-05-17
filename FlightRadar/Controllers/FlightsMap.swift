@@ -48,7 +48,7 @@ extension FlightsMap:CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.first {
-            mapView.camera = GMSCameraPosition(target: location.coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
+            mapView.camera = GMSCameraPosition(target: location.coordinate, zoom: 12, bearing: 0, viewingAngle: 0)
             
             locationManager.stopUpdatingLocation()
         }
@@ -59,9 +59,17 @@ extension FlightsMap: GMSMapViewDelegate {
     
     func mapView(_ mapView: GMSMapView, idleAt position: GMSCameraPosition) {
         let myBounds = getBoundsFromMap(map: mapView)
-        Flight.getFlights(bound: myBounds) { (completion: [Flight]) in
-            print("Git")
+        Flight.getFlights(bound: myBounds) { (allFlights: [Flight]) in
+            for flight in allFlights
+            {
+                self.addPlaneToMap(lat: flight.lat, long: flight.lng, title: flight.call)
+            }
         }
+    }
+    
+    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+        mapView.selectedMarker = marker
+        return true
     }
     
     func getBoundsFromMap(map: GMSMapView) -> GMSCoordinateBounds{
@@ -70,5 +78,13 @@ extension FlightsMap: GMSMapViewDelegate {
         let bounds: GMSCoordinateBounds = GMSCoordinateBounds.init(region: visibleRegion)
         
         return bounds
+    }
+    
+    func addPlaneToMap(lat: Double, long: Double, title: String)
+    {
+        let position = CLLocationCoordinate2D(latitude: lat, longitude: long)
+        let marker = GMSMarker(position: position)
+        marker.title = title
+        marker.map = mapView
     }
 }

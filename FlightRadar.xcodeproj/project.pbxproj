@@ -10,6 +10,7 @@
 		232F403F4BB44E909B171040 /* Pods_FlightRadar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66F2E8467B374408624BBFD1 /* Pods_FlightRadar.framework */; };
 		C36EA4001ECA768500F8369C /* FlightsMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36EA3FF1ECA768500F8369C /* FlightsMap.swift */; };
 		C36EA4041ECA835800F8369C /* Flight.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36EA4031ECA835800F8369C /* Flight.swift */; };
+		C39CCA631ECC811F005D03F8 /* plane.png in Resources */ = {isa = PBXBuildFile; fileRef = C39CCA621ECC811F005D03F8 /* plane.png */; };
 		C3D729311ECA6CD800D6B929 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D729301ECA6CD800D6B929 /* AppDelegate.swift */; };
 		C3D729361ECA6CD800D6B929 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3D729341ECA6CD800D6B929 /* Main.storyboard */; };
 		C3D729381ECA6CD800D6B929 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3D729371ECA6CD800D6B929 /* Assets.xcassets */; };
@@ -22,6 +23,7 @@
 		A36DA6C2BFCD5D62BCBAD2CD /* Pods-FlightRadar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlightRadar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlightRadar/Pods-FlightRadar.debug.xcconfig"; sourceTree = "<group>"; };
 		C36EA3FF1ECA768500F8369C /* FlightsMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightsMap.swift; sourceTree = "<group>"; };
 		C36EA4031ECA835800F8369C /* Flight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flight.swift; sourceTree = "<group>"; };
+		C39CCA621ECC811F005D03F8 /* plane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plane.png; sourceTree = "<group>"; };
 		C3D7292D1ECA6CD800D6B929 /* FlightRadar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlightRadar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3D729301ECA6CD800D6B929 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C3D729351ECA6CD800D6B929 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -61,6 +63,32 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		C39CCA591ECC7A13005D03F8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C39CCA5A1ECC7AC9005D03F8 /* Supported Files */ = {
+			isa = PBXGroup;
+			children = (
+				C39CCA5B1ECC7AE5005D03F8 /* Images */,
+				C3D7293C1ECA6CD800D6B929 /* Info.plist */,
+				C3D729451ECA6FFE00D6B929 /* ApiKeys.plist */,
+				C3D729371ECA6CD800D6B929 /* Assets.xcassets */,
+			);
+			name = "Supported Files";
+			sourceTree = "<group>";
+		};
+		C39CCA5B1ECC7AE5005D03F8 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				C39CCA621ECC811F005D03F8 /* plane.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 		C3D729241ECA6CD800D6B929 = {
 			isa = PBXGroup;
 			children = (
@@ -83,14 +111,13 @@
 			isa = PBXGroup;
 			children = (
 				C3D729431ECA6D1F00D6B929 /* Controllers */,
+				C39CCA591ECC7A13005D03F8 /* Extensions */,
 				C3D729421ECA6D1B00D6B929 /* Models */,
 				C3D729441ECA6D2B00D6B929 /* Views */,
 				C3D729301ECA6CD800D6B929 /* AppDelegate.swift */,
+				C39CCA5A1ECC7AC9005D03F8 /* Supported Files */,
 				C3D729341ECA6CD800D6B929 /* Main.storyboard */,
-				C3D729371ECA6CD800D6B929 /* Assets.xcassets */,
 				C3D729391ECA6CD800D6B929 /* LaunchScreen.storyboard */,
-				C3D7293C1ECA6CD800D6B929 /* Info.plist */,
-				C3D729451ECA6FFE00D6B929 /* ApiKeys.plist */,
 			);
 			path = FlightRadar;
 			sourceTree = "<group>";
@@ -183,6 +210,7 @@
 			files = (
 				C3D7293B1ECA6CD800D6B929 /* LaunchScreen.storyboard in Resources */,
 				C3D729461ECA6FFE00D6B929 /* ApiKeys.plist in Resources */,
+				C39CCA631ECC811F005D03F8 /* plane.png in Resources */,
 				C3D729381ECA6CD800D6B929 /* Assets.xcassets in Resources */,
 				C3D729361ECA6CD800D6B929 /* Main.storyboard in Resources */,
 			);

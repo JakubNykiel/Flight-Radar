@@ -58,11 +58,12 @@ extension FlightsMap:CLLocationManagerDelegate {
 extension FlightsMap: GMSMapViewDelegate {
     
     func mapView(_ mapView: GMSMapView, idleAt position: GMSCameraPosition) {
+        mapView.clear()
         let myBounds = getBoundsFromMap(map: mapView)
         Flight.getFlights(bound: myBounds) { (allFlights: [Flight]) in
             for flight in allFlights
             {
-                self.addPlaneToMap(lat: flight.lat, long: flight.lng, title: flight.call)
+                self.addPlaneToMap(lat: flight.lat, long: flight.lng, title: flight.call, trak: flight.trak)
             }
         }
     }
@@ -80,10 +81,12 @@ extension FlightsMap: GMSMapViewDelegate {
         return bounds
     }
     
-    func addPlaneToMap(lat: Double, long: Double, title: String)
+    func addPlaneToMap(lat: Double, long: Double, title: String, trak: Double)
     {
         let position = CLLocationCoordinate2D(latitude: lat, longitude: long)
         let marker = GMSMarker(position: position)
+        marker.icon = UIImage(named: "plane.png")
+        marker.rotation = trak
         marker.title = title
         marker.map = mapView
     }

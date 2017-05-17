@@ -17,6 +17,7 @@ enum FlightFields:String
     case Longitude = "Long"
     case Model = "Mdl"
     case Call = "Call"
+    case Trak = "Trak"
 }
 
 class Flight {
@@ -25,12 +26,14 @@ class Flight {
     let lng: Double
     let model: String
     let call: String
+    let trak: Double
     
     init(json: JSON) {
         self.lat = json[FlightFields.Latitude.rawValue].doubleValue
         self.lng = json[FlightFields.Longitude.rawValue].doubleValue
         self.model = json[FlightFields.Model.rawValue].stringValue
         self.call = json[FlightFields.Call.rawValue].stringValue
+        self.trak = json[FlightFields.Trak.rawValue].doubleValue
     }
 }
 /*

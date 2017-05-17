@@ -58,17 +58,17 @@ extension FlightsMap:CLLocationManagerDelegate {
 extension FlightsMap: GMSMapViewDelegate {
     
     func mapView(_ mapView: GMSMapView, idleAt position: GMSCameraPosition) {
-        let _ = getBoundsFromMap(map: mapView)
+        let myBounds = getBoundsFromMap(map: mapView)
+        Flight.getFlights(bound: myBounds) { (completion: [Flight]) in
+            print("Git")
+        }
     }
     
-    func getBoundsFromMap(map: GMSMapView) -> [String:CLLocationCoordinate2D]{
+    func getBoundsFromMap(map: GMSMapView) -> GMSCoordinateBounds{
         var boundPoints: [String:CLLocationCoordinate2D] = [:]
         let visibleRegion: GMSVisibleRegion = map.projection.visibleRegion()
         let bounds: GMSCoordinateBounds = GMSCoordinateBounds.init(region: visibleRegion)
         
-        boundPoints["northEast"] = bounds.northEast
-        boundPoints["southWest"] = bounds.southWest
-        print("NE:  lat:\(bounds.northEast.latitude) lon:\(bounds.northEast.longitude)")
-        return boundPoints
+        return bounds
     }
 }

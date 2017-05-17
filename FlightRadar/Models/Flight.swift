@@ -27,18 +27,62 @@ class Flight {
     }
 }
 /*
-*
-*  API functions
-*
-*/
+ *
+ *  API functions
+ *
+ */
 
 extension Flight {
-    class func getPath(bound: [String:CLLocationCoordinate2D]) -> String {
-        let neLat = String(describing: bound["northEast"]?.latitude)
-        let swLat = String(describing: bound["southWest"]?.latitude)
-        let neLng = String(describing: bound["northEast"]?.longitude)
-        let swLng = String(describing: bound["southWest"]?.longitude)
+    class func getPath(bound: GMSCoordinateBounds) -> String {
         
-        return "https://public-api.adsbexchange.com/VirtualRadar/AircraftList.json?lat=52.1772&lng=20.9623&fNBnd=\(neLat)&fSBnd=\(swLat)&fEBnd=\(neLng)&fWBnd=\(swLng)"
+        let neLat = bound.northEast.latitude
+        let swLat = bound.southWest.latitude
+        let neLng = bound.northEast.longitude
+        let swLng = bound.southWest.longitude
+        
+        let path = "https://public-api.adsbexchange.com/VirtualRadar/AircraftList.json?fNBnd=\(neLat)&fSBnd=\(swLat)&fEBnd=\(neLng)&fWBnd=\(swLng)"
+        print(path)
+        return path
+    }
+    
+    class func getFlights(bound: GMSCoordinateBounds, completion: @escaping ([Flight]) -> Void) {
+        Alamofire.request(Flight.getPath(bound: bound))
+            .responseJSON { response in
+                switch response.result {
+                case .success(let value):
+                    let json = JSON(value)
+                   print("JSON: \(json)")
+                case .failure(let error):
+                    print(error)
+                }
+        }
+//        
+//                guard let responseJSON = response.result.value as? JSON,
+//                    let results = responseJSON[0]["results"],
+//                    let firstResult = results.first,
+//                    let info = firstResult["info"] as? [String: Any],
+//                    let imageColors = info["image_colors"] as? [[String: Any]] else {
+//                        print("Invalid color information received from service")
+//                        completion([Flight]())
+//                        return
+//                }
+//                
+//                let photoColors = imageColors.flatMap({ (dict) -> Flight? in
+//                    guard let r = dict["r"] as? String,
+//                        let g = dict["g"] as? String,
+//                        let b = dict["b"] as? String,
+//                        let closestPaletteColor = dict["closest_palette_color"] as? String else {
+//                            return nil
+//                    }
+//                    
+//                    return PhotoColor(red: Int(r),
+//                                      green: Int(g),
+//                                      blue: Int(b),
+//                                      colorName: closestPaletteColor)
+//                })
+//                
+//                // 5.
+//                completion(photoColors)
+//        }
     }
 }

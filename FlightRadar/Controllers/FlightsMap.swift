@@ -85,12 +85,12 @@ extension FlightsMap: GMSMapViewDelegate {
     }
     
     func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
-        flightDetailsView.isHidden = true
+        flightDetailsView.setView(hidden: true)
     }
     
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
         mapView.selectedMarker = marker
-        flightDetailsView.isHidden = false
+        flightDetailsView.setView(hidden: false)
         return true
     }
     

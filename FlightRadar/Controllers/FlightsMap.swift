@@ -24,7 +24,8 @@ class FlightsMap: UIViewController {
     
     
     let locationManager = CLLocationManager()
-    var markerDictionary: [String:GMSMarker] = [:]
+    var allMarkersOnMap: [String:GMSMarker] = [:]
+    var allPlanesInRegion: [String:Flight] = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,6 +81,7 @@ extension FlightsMap: GMSMapViewDelegate {
             {
                 
                 self.addPlaneToMap(lat: flight.lat, long: flight.lng, title: flight.call, trak: flight.trak)
+                self.allPlanesInRegion[flight.call] = flight
             }
         }
     }
@@ -105,8 +107,8 @@ extension FlightsMap: GMSMapViewDelegate {
     func addPlaneToMap(lat: Float, long: Float, title: String, trak: Double)
     {
         let position = CLLocationCoordinate2D(latitude: CLLocationDegrees(lat), longitude: CLLocationDegrees(long))
-        if markerDictionary[title] != nil {
-            markerDictionary[title]?.position = position
+        if allMarkersOnMap[title] != nil {
+            allMarkersOnMap[title]?.position = position
         }
         else {
             let marker = GMSMarker(position: position)
@@ -114,7 +116,7 @@ extension FlightsMap: GMSMapViewDelegate {
             marker.rotation = trak
             marker.title = title
             marker.map = mapView
-            markerDictionary[title] = marker
+            allMarkersOnMap[title] = marker
         }
     }
 }

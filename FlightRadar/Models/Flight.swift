@@ -22,15 +22,15 @@ enum FlightFields:String
 
 class Flight {
     
-    let lat: Double
-    let lng: Double
+    let lat: Float
+    let lng: Float
     let model: String
     let call: String
     let trak: Double
     
     init(json: JSON) {
-        self.lat = json[FlightFields.Latitude.rawValue].doubleValue
-        self.lng = json[FlightFields.Longitude.rawValue].doubleValue
+        self.lat = json[FlightFields.Latitude.rawValue].floatValue
+        self.lng = json[FlightFields.Longitude.rawValue].floatValue
         self.model = json[FlightFields.Model.rawValue].stringValue
         self.call = json[FlightFields.Call.rawValue].stringValue
         self.trak = json[FlightFields.Trak.rawValue].doubleValue
@@ -45,10 +45,10 @@ class Flight {
 extension Flight {
     class func getPath(bound: GMSCoordinateBounds) -> String {
         
-        let neLat = bound.northEast.latitude
-        let swLat = bound.southWest.latitude
-        let neLng = bound.northEast.longitude
-        let swLng = bound.southWest.longitude
+        let neLat = bound.northEast.latitude + 0.2
+        let swLat = bound.southWest.latitude + 0.2
+        let neLng = bound.northEast.longitude + 0.5
+        let swLng = bound.southWest.longitude + 0.5
         
         let path = "https://public-api.adsbexchange.com/VirtualRadar/AircraftList.json?fNBnd=\(neLat)&fSBnd=\(swLat)&fEBnd=\(neLng)&fWBnd=\(swLng)"
         print(path)
@@ -62,7 +62,7 @@ extension Flight {
                 
                 case .failure(let error):
                     print(error)
-                    completion([Flight]())
+//                    completion([Flight]())
                     
                 case .success(let value):
                     let json = JSON(value)
@@ -73,7 +73,6 @@ extension Flight {
                     }
                     completion(flights)
                 }
-                
         }
     }
 }

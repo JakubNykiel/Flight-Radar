@@ -32,7 +32,7 @@
                                     <constraint firstAttribute="height" constant="230" id="RR0-LP-2Ly"/>
                                 </constraints>
                                 <connections>
-                                    <segue destination="FTE-Vk-QDm" kind="embed" id="Ld4-DD-MJr"/>
+                                    <segue destination="FTE-Vk-QDm" kind="embed" identifier="showFlightDetails" id="Ld4-DD-MJr"/>
                                 </connections>
                             </containerView>
                         </subviews>

@@ -20,12 +20,22 @@ class FlightDetails: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func changeLabels(flightInformation: Flight)
+    {
+        callLabel.text = flightInformation.call
+        fromLabel.text = flightInformation.from
+        toLabel.text = flightInformation.destination
+        modelLabel.text = flightInformation.model
+        airlinesLabel.text = flightInformation.airlines
+        groundSpeedLabel.text = String(flightInformation.groundSpeed)
+        altitudeLabel.text = String(flightInformation.altitude)
     }
 }

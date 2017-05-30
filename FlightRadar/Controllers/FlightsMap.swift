@@ -9,34 +9,27 @@
 import UIKit
 import GoogleMaps
 
-
 class FlightsMap: UIViewController {
     
     @IBOutlet weak var mapView: GMSMapView!
     @IBOutlet weak var flightDetailsView: UIView!
-    @IBOutlet weak var callLabel: UILabel!
-    @IBOutlet weak var airlinesLabel: UILabel!
-    @IBOutlet weak var modelLabel: UILabel!
-    @IBOutlet weak var fromLabel: UILabel!
-    @IBOutlet weak var toLabel: UILabel!
-    @IBOutlet weak var altitudeLabel: UILabel!
-    @IBOutlet weak var groundSpeedLabel: UILabel!
     
     
     let locationManager = CLLocationManager()
     var allMarkersOnMap: [String:GMSMarker] = [:]
     var allPlanesInRegion: [String:Flight] = [:]
+    var selectedFlight: Flight?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        mapView.delegate = self
         locationManager.requestWhenInUseAuthorization()
         locationManager.delegate = self
         flightDetailsView.isHidden = true
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        mapView.delegate = self
-        _ = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(self.getFlightsForPosition), userInfo: nil, repeats: true)
+        _ = Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(self.getFlightsForPosition), userInfo: nil, repeats: true)
         
     }
     
@@ -60,7 +53,7 @@ extension FlightsMap:CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.first {
-            mapView.camera = GMSCameraPosition(target: location.coordinate, zoom: 12, bearing: 0, viewingAngle: 0)
+            mapView.camera = GMSCameraPosition(target: location.coordinate, zoom: 10, bearing: 0, viewingAngle: 0)
             
             locationManager.stopUpdatingLocation()
         }
@@ -82,7 +75,12 @@ extension FlightsMap: GMSMapViewDelegate {
                 
                 self.addPlaneToMap(lat: flight.lat, long: flight.lng, title: flight.call, trak: flight.trak)
                 self.allPlanesInRegion[flight.call] = flight
+                if(flight.call == self.selectedFlight?.call)
+                {
+                    self.sendData(data: flight)
+                }
             }
+            
         }
     }
     
@@ -92,6 +90,10 @@ extension FlightsMap: GMSMapViewDelegate {
     
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
         mapView.selectedMarker = marker
+        if let flightTitle = marker.title {
+            selectedFlight = self.allPlanesInRegion[flightTitle]
+            sendData(data: selectedFlight)
+        }
         flightDetailsView.setView(hidden: false)
         return true
     }
@@ -109,6 +111,7 @@ extension FlightsMap: GMSMapViewDelegate {
         let position = CLLocationCoordinate2D(latitude: CLLocationDegrees(lat), longitude: CLLocationDegrees(long))
         if allMarkersOnMap[title] != nil {
             allMarkersOnMap[title]?.position = position
+            allMarkersOnMap[title]?.rotation = trak
         }
         else {
             let marker = GMSMarker(position: position)
@@ -117,6 +120,14 @@ extension FlightsMap: GMSMapViewDelegate {
             marker.title = title
             marker.map = mapView
             allMarkersOnMap[title] = marker
+        }
+    }
+}
+extension FlightsMap: DataSwap {
+    func sendData(data: Flight?) {
+        let childrenVC  = childViewControllers.last as! FlightDetails
+        if data != nil {
+            childrenVC.changeLabels(flightInformation: data!)
         }
     }
 }

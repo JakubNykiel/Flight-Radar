@@ -18,6 +18,11 @@ enum FlightFields:String
     case Model = "Mdl"
     case Call = "Call"
     case Trak = "Trak"
+    case From = "From"
+    case To = "To"
+    case Airlines = "Op"
+    case GroundSpeed = "Spd"
+    case Altitude = "Alt"
 }
 
 class Flight {
@@ -27,6 +32,11 @@ class Flight {
     let model: String
     let call: String
     let trak: Double
+    let from: String
+    let destination: String
+    let airlines: String
+    let groundSpeed: Int
+    let altitude: Int
     
     init(json: JSON) {
         self.lat = json[FlightFields.Latitude.rawValue].floatValue
@@ -34,6 +44,11 @@ class Flight {
         self.model = json[FlightFields.Model.rawValue].stringValue
         self.call = json[FlightFields.Call.rawValue].stringValue
         self.trak = json[FlightFields.Trak.rawValue].doubleValue
+        self.from = json[FlightFields.From.rawValue].stringValue
+        self.destination = json[FlightFields.To.rawValue].stringValue
+        self.airlines = json[FlightFields.Airlines.rawValue].stringValue
+        self.groundSpeed = json[FlightFields.GroundSpeed.rawValue].intValue
+        self.altitude = json[FlightFields.Altitude.rawValue].intValue
     }
 }
 /*

@@ -19,6 +19,7 @@
 		C3D729381ECA6CD800D6B929 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3D729371ECA6CD800D6B929 /* Assets.xcassets */; };
 		C3D7293B1ECA6CD800D6B929 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3D729391ECA6CD800D6B929 /* LaunchScreen.storyboard */; };
 		C3D729461ECA6FFE00D6B929 /* ApiKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = C3D729451ECA6FFE00D6B929 /* ApiKeys.plist */; };
+		C3FE9BE61ED949DF00796930 /* DataSwap.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FE9BE51ED949DF00796930 /* DataSwap.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		C3D7293A1ECA6CD800D6B929 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C3D7293C1ECA6CD800D6B929 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C3D729451ECA6FFE00D6B929 /* ApiKeys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ApiKeys.plist; sourceTree = "<group>"; };
+		C3FE9BE51ED949DF00796930 /* DataSwap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSwap.swift; sourceTree = "<group>"; };
 		DA59E8FDA939F07A050D5F1E /* Pods-FlightRadar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlightRadar.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlightRadar/Pods-FlightRadar.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -100,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				C3D211551ED7501900544A64 /* SegueHandler.swift */,
+				C3FE9BE51ED949DF00796930 /* DataSwap.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 				C36EA4001ECA768500F8369C /* FlightsMap.swift in Sources */,
 				C3BE8DF01ECE4EEC00E0C31B /* FlightDetails.swift in Sources */,
 				C3D729311ECA6CD800D6B929 /* AppDelegate.swift in Sources */,
+				C3FE9BE61ED949DF00796930 /* DataSwap.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

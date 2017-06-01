@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		232F403F4BB44E909B171040 /* Pods_FlightRadar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66F2E8467B374408624BBFD1 /* Pods_FlightRadar.framework */; };
+		C34A21D61EE05C1E00E1C92B /* activePlane.png in Resources */ = {isa = PBXBuildFile; fileRef = C34A21D51EE05C1E00E1C92B /* activePlane.png */; };
 		C36EA4001ECA768500F8369C /* FlightsMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36EA3FF1ECA768500F8369C /* FlightsMap.swift */; };
 		C36EA4041ECA835800F8369C /* Flight.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36EA4031ECA835800F8369C /* Flight.swift */; };
 		C39CCA631ECC811F005D03F8 /* plane.png in Resources */ = {isa = PBXBuildFile; fileRef = C39CCA621ECC811F005D03F8 /* plane.png */; };
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		66F2E8467B374408624BBFD1 /* Pods_FlightRadar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlightRadar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A36DA6C2BFCD5D62BCBAD2CD /* Pods-FlightRadar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlightRadar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlightRadar/Pods-FlightRadar.debug.xcconfig"; sourceTree = "<group>"; };
+		C34A21D51EE05C1E00E1C92B /* activePlane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = activePlane.png; sourceTree = "<group>"; };
 		C36EA3FF1ECA768500F8369C /* FlightsMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightsMap.swift; sourceTree = "<group>"; };
 		C36EA4031ECA835800F8369C /* Flight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flight.swift; sourceTree = "<group>"; };
 		C39CCA621ECC811F005D03F8 /* plane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plane.png; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				C39CCA621ECC811F005D03F8 /* plane.png */,
+				C34A21D51EE05C1E00E1C92B /* activePlane.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -230,6 +233,7 @@
 			files = (
 				C3D7293B1ECA6CD800D6B929 /* LaunchScreen.storyboard in Resources */,
 				C3D729461ECA6FFE00D6B929 /* ApiKeys.plist in Resources */,
+				C34A21D61EE05C1E00E1C92B /* activePlane.png in Resources */,
 				C39CCA631ECC811F005D03F8 /* plane.png in Resources */,
 				C3D729381ECA6CD800D6B929 /* Assets.xcassets in Resources */,
 				C3D729361ECA6CD800D6B929 /* Main.storyboard in Resources */,

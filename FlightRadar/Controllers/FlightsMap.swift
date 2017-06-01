@@ -19,6 +19,7 @@ class FlightsMap: UIViewController {
     var allMarkersOnMap: [String:GMSMarker] = [:]
     var allPlanesInRegion: [String:Flight] = [:]
     var selectedFlight: Flight?
+    var selectedMarker: GMSMarker?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,10 +87,13 @@ extension FlightsMap: GMSMapViewDelegate {
     
     func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
         flightDetailsView.setView(hidden: true)
+        selectedMarker?.icon = UIImage(named: "plane.png")
     }
     
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
         mapView.selectedMarker = marker
+        marker.icon = UIImage(named: "activePlane.png")
+        selectedMarker = marker
         if let flightTitle = marker.title {
             selectedFlight = self.allPlanesInRegion[flightTitle]
             sendData(data: selectedFlight)

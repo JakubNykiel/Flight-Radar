@@ -27,6 +27,7 @@ class FlightsMap: UIViewController {
         locationManager.requestWhenInUseAuthorization()
         locationManager.delegate = self
         flightDetailsView.isHidden = true
+        self.getFlightsForPosition()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -54,7 +55,7 @@ extension FlightsMap:CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.first {
-            mapView.camera = GMSCameraPosition(target: location.coordinate, zoom: 10, bearing: 0, viewingAngle: 0)
+            mapView.camera = GMSCameraPosition(target: location.coordinate, zoom: 9, bearing: 0, viewingAngle: 0)
             
             locationManager.stopUpdatingLocation()
         }
